@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <div class="about-container">
+      <h1>About Me</h1>
+      <p>
+        Hello! I'm a passionate web developer with a love for creating beautiful
+        and functional websites. I enjoy learning new technologies and exploring
+        innovative ways to solve problems. My goal is to create user-friendly
+        websites that provide a great experience for everyone.
+      </p>
+      <p>
+        Currently, I'm working on improving my skills in JavaScript, HTML, CSS,
+        and other front-end technologies.
+      </p>
+      <p>© <span class="year"></span> Your Name. All rights reserved.</p>
+    </div>
+
+    <script>
+      // Set the current year dynamically
+      document.querySelector(".year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

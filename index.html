@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HopeBridge Hospital</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Main content should grow to fill space */
+      main {
+        flex: 1;
+      }
+
+      header {
+        background-color: #0056b3;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+
+        animation: move 2s infinite alternate;
+        transition: color 0.3s;
+
+        /* Add a subtle shadow effect */
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+        /* border-bottom: 2px solid white; */
+        padding-bottom: 2px;
+        transition: border-bottom 0.3s;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section {
+        background-color: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid #0056b3;
+        border-right: 4px solid #0056b3;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        background-color: #71b300;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      button {
+        background-color: #b30065;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #004494;
+      }
+
+      .doctor {
+        margin-bottom: 15px;
+      }
+
+      .content-section {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+
+      .appointment-wrapper {
+        display: flex;
+        justify-content: center;
+        /* padding: 10px 10px; */
+        background-color: #f9f9f9;
+      }
+
+      .appointment-container {
+        width: 100%;
+        max-width: 600px;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .appointment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .appointment-form input,
+      .appointment-form select,
+      .appointment-form button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .appointment-form button {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .appointment-form button:hover {
+        background-color: #45a049;
+      }
+      footer {
+        background-color: #0056b3;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 16px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HopeBridge Hospital</h1>
+      <nav>
+        <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0);" onclick="showSection('about')">About</a>
+        <a href="javascript:void(0);" onclick="showSection('departments')"
+          >Departments</a
+        >
+        <a href="javascript:void(0);" onclick="showSection('doctors')"
+          >Doctors</a
+        >
+        <a href="javascript:void(0);" onclick="showSection('appointment')"
+          >Appointment</a
+        >
+        <a href="javascript:void(0);" onclick="showSection('contact')"
+          >Contact</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="content-section active">
+        <h2>Welcome to HopeBridge Hospital</h2>
+        <p>
+          Your health is our top priority. HopeBridge Hospital provides quality
+          healthcare services with experienced doctors and state-of-the-art
+          facilities.
+        </p>
+        <p>
+          Our commitment is to ensure that every patient receives personalized
+          care and attention in a comfortable and compassionate environment.
+        </p>
+        <button onclick="showSection('appointment')">
+          Book an Appointment
+        </button>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="content-section">
+        <h2>About Us</h2>
+        <p>
+          HopeBridge Hospital, founded in 2005, is dedicated to providing
+          exceptional healthcare services to the community. Our mission is to
+          ensure the well-being of our patients through advanced medical
+          technologies, experienced professionals, and compassionate care.
+        </p>
+        <h3>Our Vision</h3>
+        <p>
+          To be a leader in healthcare, committed to quality, safety, and
+          patient-centered care.
+        </p>
+        <h3>Our Mission</h3>
+        <p>
+          To provide comprehensive healthcare services and promote the health
+          and wellness of our community.
+        </p>
+      </section>
+
+      <!-- Departments Section -->
+      <section id="departments" class="content-section">
+        <h2>Our Departments</h2>
+        <p>
+          HopeBridge Hospital offers a wide range of medical services across
+          various departments to ensure that we meet all of our patients'
+          healthcare needs.
+        </p>
+        <ul>
+          <li>
+            <strong>General Medicine</strong> - Comprehensive care for various
+            health conditions.
+          </li>
+          <li>
+            <strong>Gynecology</strong> - Specialized care for women's health,
+            including reproductive and menstrual care.
+          </li>
+          <li>
+            <strong>Pediatrics</strong> - Child healthcare services from infancy
+            through adolescence.
+          </li>
+          <li>
+            <strong>Orthopedics</strong> - Treatment for musculoskeletal
+            conditions, including bone, joint, and soft tissue care.
+          </li>
+          <li>
+            <strong>Emergency</strong> - Immediate care for urgent medical
+            conditions requiring quick intervention.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Doctors Section -->
+      <section id="doctors" class="content-section">
+        <h2>Our Doctors</h2>
+        <div class="doctor">
+          <h3>Dr. Ayesha Khan</h3>
+          <p>
+            General Medicine - 10 years of experience in providing care for
+            general medical conditions.
+          </p>
+        </div>
+        <div class="doctor">
+          <h3>Dr. Bilal Ahmed</h3>
+          <p>
+            Orthopedics - Specializing in bone and joint care with 8 years of
+            experience.
+          </p>
+        </div>
+        <div class="doctor">
+          <h3>Dr. Sana Malik</h3>
+          <p>
+            Gynecology - 12 years of experience in women's health, focusing on
+            gynecological issues.
+          </p>
+        </div>
+      </section>
+
+      <!-- Appointment Section -->
+      <section id="appointment" class="content-section">
+        <div class="appointment-wrapper">
+          <div class="appointment-container">
+            <h2>Book an Appointment</h2>
+            <p>
+              Please fill out the form below to schedule your appointment with
+              one of our specialists:
+            </p>
+
+            <form class="appointment-form">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="date">Appointment Date</label>
+              <input type="date" id="date" name="date" required />
+
+              <label for="department">Select Department</label>
+              <select id="department" name="department" required>
+                <option value="General Medicine">General Medicine</option>
+                <option value="Gynecology">Gynecology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Emergency">Emergency</option>
+              </select>
+
+              <label for="contact">Phone Number</label>
+              <input type="tel" id="contact" name="contact" required />
+
+              <button type="submit">Submit Appointment</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="content-section">
+        <h2>Contact Us</h2>
+        <p>
+          If you have any questions or need assistance, feel free to reach out
+          to us:
+        </p>
+        <p><strong>Address:</strong> 123 Health St, City, Country</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Email:</strong> contact@hopebridgehospital.com</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 HopeBridge Hospital. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Function to show the active section and hide the others
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll(".content-section");
+        sections.forEach((section) => {
+          if (section.id === sectionId) {
+            section.classList.add("active");
+          } else {
+            section.classList.remove("active");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

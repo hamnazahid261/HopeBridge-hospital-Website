@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Page Loading</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      .nav-links {
+        margin: 20px;
+      }
+      .nav-links a {
+        margin: 10px;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #007bff;
+        cursor: pointer;
+      }
+      #content {
+        width: 80%;
+        max-width: 800px;
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-links">
+      <a href="javascript:void(0);" onclick="loadPage('about.html')">About</a>
+      <a href="javascript:void(0);" onclick="loadPage('unihealth.html')"
+        >Contact</a
+      >
+    </div>
+
+    <!-- Content will be loaded here -->
+    <div id="content">
+      <h1>Welcome! Please select a page to load.zxsx</h1>
+    </div>
+
+    <script>
+      // Function to load the content from a specific HTML file
+      function loadPage(page) {
+        fetch(page)
+          .then((response) => response.text())
+          .then((html) => {
+            // Replace the content of the #content div with the loaded page
+            document.getElementById("content").innerHTML = html;
+          })
+          .catch((error) => {
+            console.error("Error loading the page:", error);
+            document.getElementById("content").innerHTML =
+              "<p>Sorry, we couldn't load the page. Please try again later.</p>";
+          });
+      }
+    </script>
+  </body>
+</html>
